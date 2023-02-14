@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	[[${name}]]<br/>
+	[[${vo}]]<br/>
+	
+	<!-- 컨트롤러에서 보내는 값을 json문자열 형태로 받아준다 -->
+	<script th:inline="javascript">
+		var aa = '[[${name}]]';
+		var bb = '[[${vo}]]';
+		
+		console.log(aa);
+		console.log(bb);
+		
+		
+		
+		
+		/* console.log(JSON.parse(aa));
+		console.log(JSON.parse(bb)); */
+		
+	</script> 
+</body>
+</html>
