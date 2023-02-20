@@ -8,6 +8,8 @@
 	[[${name}]]<br/>
 	[[${vo}]]<br/>
 	
+	
+	
 	<!-- 컨트롤러에서 보내는 값을 json문자열 형태로 받아준다 -->
 	<script th:inline="javascript">
 		var aa = '[[${name}]]';
@@ -16,12 +18,11 @@
 		console.log(aa);
 		console.log(bb);
 		
-		
-		
-		
-		/* console.log(JSON.parse(aa));
-		console.log(JSON.parse(bb)); */
+		console.log(JSON.parse(aa));
+		console.log(JSON.parse(bb));
 		
 	</script> 
 </body>
 </html>
+
+

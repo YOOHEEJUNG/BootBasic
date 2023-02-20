@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<th:block th:fragment="함수(section)">
+<th:block th:fragment="함수(a)">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -13,13 +13,12 @@
 	</header>
 	
 	
-	<section th:replace="${section}">
+	<section th:replace="${a}">
 			
 	</section>
 	
 	
 	<footer>
-	<br>
 		공통 템플릿 푸터
 	</footer>
 	

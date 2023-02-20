@@ -44,8 +44,6 @@ public class ValidController {
 			} //반복문 끝
 			model.addAttribute("vo", vo); //사용자가 작성한 값을 화면으로 
 			return "valid/ex01";
-			
-	
 		}
 		
  

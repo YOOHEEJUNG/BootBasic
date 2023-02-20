@@ -9,4 +9,42 @@
   		select now()
   	</select>
   
+  
+ 	<select id="joinOne" resultType="MemoVO">
+		select m.*,
+			   u.name,
+			   u.email
+		from memo m left join users u
+		on m.writer = u.id 	
+ 	</select>
+ 	
+ 	 	<select id="joinTwo" resultMap="joinResult">
+		select *
+		from  users u left join memo m
+		on  u.id  =	m.writer
+ 	</select>
+ 	
+ 	<!-- 1:N형식의 조인에서는 ORM작업을 직접 표기해야 한다 -->
+ 	<!-- type에는 리턴의 결과 타입, 
+ 		 id는 resultMap의 이름,
+ 		 column은 데이터베이스의 컬럼값,
+ 		 property는 처리할 vo의 속성값 
+ 	-->
+ 	
+ 	
+ 	<resultMap type="UsersVO" id="joinResult">
+ 		<result column="id" property="id"></result>
+ 		<result column="name" property="name"></result>
+ 		<result column="email" property="email"></result>
+ 		
+ 		<collection property="memoList" resultMap="memoListResult"/>
+ 	</resultMap>
+ 	
+ 	<resultMap type="MemoVO" id="memoListResult">	
+ 		<result column="mno" property="mno"></result>
+ 		<result column="writer" property="writer"></result>
+ 		<result column="memo" property="memo"></result>
+ 	</resultMap>
+ 	
+ 	
   </mapper>
